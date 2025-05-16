@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>日報</title>
+</head>
+<body>
+    <h1>日記一覧</h1>
+    {{if .error}}
+        <p>{{.error}}</p>
+    {{end}}
+    {{range .diaries}}
+        <div>
+            <p>投稿日時: {{.CreatedAt.Format "2006-01-02 15:04:05"}}</p>
+            <pre>{{.Content}}</pre>
+            <p>ハッシュ値: {{.Hash}}</p>
+            <hr>
+        </div>
+    {{end}}
+</body>
+</html> 
