@@ -8,11 +8,12 @@ import (
 	"strings"
 	"time"
 
-	"goblog/database"
-	"goblog/models"
+	"diary/database"
+	"diary/models"
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
+
 )
 
 func main() {
@@ -37,6 +38,8 @@ func main() {
 		c.HTML(200, "index.html", gin.H{"diaries": diaries})
 	})
 
+
+	
 	// APIエンドポイント
 	// 日記投稿API
 	r.POST("/api/diary", func(c *gin.Context) {
